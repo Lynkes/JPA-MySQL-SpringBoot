@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Listar Pessoas</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+    <h1>Lista de Pessoas</h1>
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>Nome</td>
+            <td>Email</td>
+            <td>Fone</td>
+        </tr>
+        <tr th:each="p : ${pessoas}">
+            <td th:text="${p.id}"></td>
+            <td th:text="${p.nome}"></td>
+            <td th:text="${p.email}"></td>
+            <td th:text="${p.fone}"></td>
+            <td>
+                <a th:href="@{/pessoa/alterar/{id}(id=${p.id})}">Editar</a>
+                <a th:href="@{/pessoa/excluir/{id}(id=${p.id})}" > Excluir</a>
+            </td>
+        </tr>
+    </table>
+    <a  href="/pessoa/cadastrar">Cadastrar outra pessoa</a>
+</body>
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+            <strong>WEB-APP Spring Boot + JPA + MySQL</strong> by <a href="https://github.com/Herysson/JPA-MySQL">Herysson R. Figueiredo</a>.
+            O conteudo do código pertence a disciplina de Projeto de Software -
+            <a href="https://www.ufn.edu.br/site/">UFN</a>.
+        </p>
+    </div>
+</footer>
+</html>

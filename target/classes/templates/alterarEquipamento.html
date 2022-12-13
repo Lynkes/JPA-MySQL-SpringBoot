@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Formulário de Alteração de Equipamentos</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<header>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://bulma.io">
+                <img src="https://static.vecteezy.com/ti/vetor-gratis/t2/595164-objeto-de-e-icones-para-rotulo-esportivo-distintivo-de-ginasio-fitness-logo-design-gratis-vetor.jpg" width="112" height="28">
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="http://localhost:8080/site/">
+                    Inicio
+                </a>
+
+                <a class="navbar-item">
+                    Documentação
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        Mais
+                    </a>
+
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="https://github.com/Lynkes/JPA-MySQL-SpringBoot/blob/main/README.md">
+                            Sobre
+                        </a>
+                        <a class="navbar-item" href="https://github.com/Lynkes/JPA-MySQL-SpringBoot">
+                            Contato
+                        </a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item"  href="https://github.com/Lynkes/JPA-MySQL-SpringBoot/issues">
+                            Relatar Problema
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-dark" href="http://localhost:8080/site/cadastrar">
+                            <strong>Sign up</strong>
+                        </a>
+                        <a class="button is-dark" href="http://localhost:8080/site/login">
+                            Log in
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+</header>
+<body>
+<h1>Alterar Equipamentos</h1>
+<form action="#" th:action="@{/exercicios/alterar}" th:object="${pessoa}"
+      method="post">
+    <table>
+        <tr>
+            <td>ID:</td>
+            <td><input type="text" th:field="*{id}" readonly/></td>
+        </tr>
+        <tr>
+            <td>Nome*:</td>
+            <td><input type="text" th:field="*{nome}" required/></td>
+        </tr>
+        <tr>
+            <td>Exercicios*:</td>
+            <td><input type="text" th:field="*{exercicios}" required/></td>
+        </tr>
+    </table>
+    <input type="submit" value="Alterar"/>
+</form>
+</body>
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+            <strong>WEB-APP Spring Boot + JPA + MySQL</strong> by <a href="https://github.com/Herysson/JPA-MySQL">Herysson R. Figueiredo</a>.
+            O conteudo do código pertence a disciplina de Projeto de Software -
+            <a href="https://www.ufn.edu.br/site/">UFN</a>.
+        </p>
+    </div>
+</footer>
+</html>

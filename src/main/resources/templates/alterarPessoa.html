@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Formulário de Alteração de Pessoas</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Alterar Pessoa</h1>
+<form action="#" th:action="@{/pessoa/alterar}" th:object="${pessoa}"
+      method="post">
+    <table>
+        <tr>
+            <td>ID:</td>
+            <td><input type="text" th:field="*{id}" readonly/></td>
+        </tr>
+        <tr>
+            <td>Nome*:</td>
+            <td><input type="text" th:field="*{nome}" required/></td>
+        </tr>
+        <tr>
+            <td>E-mail*:</td>
+            <td><input type="text" th:field="*{email}" required/></td>
+        </tr>
+        <tr>
+            <td>Fone*:</td>
+            <td><input type="text" th:field="*{fone}" required/></td>
+        </tr>
+    </table>
+    <input type="submit" value="Alterar"/>
+</form>
+</body>
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+            <strong>WEB-APP Spring Boot + JPA + MySQL</strong> by <a href="https://github.com/Herysson/JPA-MySQL">Herysson R. Figueiredo</a>.
+            O conteudo do código pertence a disciplina de Projeto de Software -
+            <a href="https://www.ufn.edu.br/site/">UFN</a>.
+        </p>
+    </div>
+</footer>
+</html>

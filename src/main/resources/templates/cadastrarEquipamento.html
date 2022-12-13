@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!-- manter a tag abaixo-->
+<html xmlns:th="httpd://wwww.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cadastro Equipamentos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script type="module" src=main.js></script>
+</head>
+<header>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://bulma.io">
+                <img src="https://static.vecteezy.com/ti/vetor-gratis/t2/595164-objeto-de-e-icones-para-rotulo-esportivo-distintivo-de-ginasio-fitness-logo-design-gratis-vetor.jpg" width="112" height="28">
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="http://localhost:8080/site/">
+                    Inicio
+                </a>
+
+                <a class="navbar-item">
+                    Documentação
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        Mais
+                    </a>
+
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="https://github.com/Lynkes/JPA-MySQL-SpringBoot/blob/main/README.md">
+                            Sobre
+                        </a>
+                        <a class="navbar-item" href="https://github.com/Lynkes/JPA-MySQL-SpringBoot">
+                            Contato
+                        </a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item"  href="https://github.com/Lynkes/JPA-MySQL-SpringBoot/issues">
+                            Relatar Problema
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-dark" href="http://localhost:8080/site/cadastrar">
+                            <strong>Sign up</strong>
+                        </a>
+                        <a class="button is-dark" href="http://localhost:8080/site/login">
+                            Log in
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+</header>
+<body>
+<section class="hero is-dark is-fullheight">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column  is-half">
+                    <div class="field">
+                        <h1 class="title is-2 has-text-centered">Cadastro de Equipamentos</h1>
+                    </div>
+                    <form class="box" action="#" th:action="@{/equipamentos/save}" th:object="${equipamentos}"method="post">
+                        <div class="field">
+                            <label class="label">Nome</label>
+                            <div class="control">
+                                <input type="text" placeholder="Nome do Equipamento" class="input"  th:field="*{nome}" required>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label class="label">Exercicios</label>
+                            <div class="control">
+                                <input type="text" placeholder="Exercicios Trabalhados" class="input" th:field="*{exercicios}" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="buttons is-right">
+                                <input class="button is-danger" type="reset" value="Limpar">
+                                <input class="button is-success" type="submit" value="Salvar">
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+            <strong>WEB-APP Spring Boot + JPA + MySQL</strong> by <a href="https://github.com/Herysson/JPA-MySQL">Herysson R. Figueiredo</a>.
+            O conteudo do código pertence a disciplina de Projeto de Software -
+            <a href="https://www.ufn.edu.br/site/">UFN</a>.
+        </p>
+    </div>
+</footer>
+</html>
+
