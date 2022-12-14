@@ -1,13 +1,16 @@
 <!DOCTYPE HTML>
 <html xmlns:th="https://www.thymeleaf.org">
 <head>
-    <title>Formulário de Alteração de Equipamentos</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Academia Web Alterar Equipamentos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script type="module" src=main.js></script>
 </head>
 <header>
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
+            <a class="navbar-item" href="">
                 <img src="https://static.vecteezy.com/ti/vetor-gratis/t2/595164-objeto-de-e-icones-para-rotulo-esportivo-distintivo-de-ginasio-fitness-logo-design-gratis-vetor.jpg" width="112" height="28">
             </a>
 
@@ -20,7 +23,7 @@
 
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item" href="http://localhost:8080/site/">
+                <a class="navbar-item" th:href="@{/}">
                     Inicio
                 </a>
 
@@ -51,10 +54,10 @@
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
-                        <a class="button is-dark" href="http://localhost:8080/site/cadastrar">
+                        <a class="button is-dark" th:href="@{/register}">
                             <strong>Sign up</strong>
                         </a>
-                        <a class="button is-dark" href="http://localhost:8080/site/login">
+                        <a class="button is-dark" th:href="@{/login}">
                             Log in
                         </a>
                     </div>
@@ -88,8 +91,7 @@
 <footer class="footer">
     <div class="content has-text-centered">
         <p>
-            <strong>WEB-APP Spring Boot + JPA + MySQL</strong> by <a href="https://github.com/Herysson/JPA-MySQL">Herysson R. Figueiredo</a>.
-            O conteudo do código pertence a disciplina de Projeto de Software -
+            <strong>WEB-APP Spring Boot + JPA + MySQL</strong> <a href="https://github.com/Lynkes/JPA-MySQL-SpringBoot">O conteudo do código pertence a disciplina de Projeto de Software</a>.
             <a href="https://www.ufn.edu.br/site/">UFN</a>.
         </p>
     </div>

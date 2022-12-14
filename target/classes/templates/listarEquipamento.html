@@ -3,39 +3,30 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Listar Pessoas</title>
-	 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <script type="module" src=main.js></script>
+    <title>Academia-Web Listar Equipamento</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 <header>
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
+            <a class="navbar-item" href="">
                 <img src="https://static.vecteezy.com/ti/vetor-gratis/t2/595164-objeto-de-e-icones-para-rotulo-esportivo-distintivo-de-ginasio-fitness-logo-design-gratis-vetor.jpg" width="112" height="28">
             </a>
-
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
             </a>
         </div>
-
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item" href="http://localhost:8080/site/">
-                    Inicio
-                </a>
+                <a class="navbar-item" aria-current="page" th:href="@{/}">Inicio</a>
 
-                <a class="navbar-item">
-                    Documentação
-                </a>
-
+                <a class="navbar-item" aria-current="page" href="https://github.com/Lynkes/JPA-MySQL-SpringBoot/blob/main/README.md">Documentação</a>
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">
                         Mais
                     </a>
-
                     <div class="navbar-dropdown">
                         <a class="navbar-item" href="https://github.com/Lynkes/JPA-MySQL-SpringBoot/blob/main/README.md">
                             Sobre
@@ -50,14 +41,13 @@
                     </div>
                 </div>
             </div>
-
             <div class="navbar-end">
                 <div class="navbar-item">
                     <div class="buttons">
-                        <a class="button is-dark" href="http://localhost:8080/site/cadastrar">
+                        <a class="button is-dark" th:href="@{/register}">
                             <strong>Sign up</strong>
                         </a>
-                        <a class="button is-dark" href="http://localhost:8080/site/login">
+                        <a class="button is-dark" th:href="@{/login}">
                             Log in
                         </a>
                     </div>
@@ -65,48 +55,38 @@
             </div>
         </div>
     </nav>
-
 </header>
 <body>
-<section class="hero is-dark is-fullheight">
-    <div class="hero-body">
-        <div class="container">
-            <div class="columns is-centered">
-                <div class="column  is-half">
-                    <div class="field">
-                        <h1 class="title is-2 has-text-centered">Lista de Equipamentos</h1>
-                    </div>
-
-					<table>
-						<tr>
-							<td>ID</td>
-							<td>Nome</td>
-							<td>Email</td>
-							<td>Fone</td>
-						</tr>
-						<tr th:each="p : ${pessoas}">
-							<td th:text="${p.id}"></td>
-							<td th:text="${p.nome}"></td>
-							<td th:text="${p.email}"></td>
-							<td th:text="${p.fone}"></td>
-							<td>
-								<a th:href="@{/pessoa/alterar/{id}(id=${p.id})}">Editar</a>
-								<a th:href="@{/pessoa/excluir/{id}(id=${p.id})}" > Excluir</a>
-							</td>
-						</tr>
-					</table>
-					<a  href="/pessoa/cadastrar">Cadastrar outra pessoa</a>
-				</div>
+    <section class="hero is-dark is-fullheight">
+        <div class="hero-body">
+            <div class="container">
+                <div class="row">
+                    <h1> Equipamentos </h1>
+                </div>
+                <table class="table table-striped table-bordered table-hover">
+                    <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome do Equip</th>
+                        <th>Exercicios Possiveis</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="equipamento: ${equipamentos}">
+                        <td th:text="${equipamento.id}"></td>
+                        <td th:text="${equipamento.nome}"></td>
+                        <td th:text="${equipamento.exercicios}"></td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 </body>
 <footer class="footer">
     <div class="content has-text-centered">
         <p>
-            <strong>WEB-APP Spring Boot + JPA + MySQL</strong> by <a href="https://github.com/Herysson/JPA-MySQL">Herysson R. Figueiredo</a>.
-            O conteudo do código pertence a disciplina de Projeto de Software -
+            <strong>WEB-APP Spring Boot + JPA + MySQL</strong> <a href="https://github.com/Lynkes/JPA-MySQL-SpringBoot">O conteudo do código pertence a disciplina de Projeto de Software</a>.
             <a href="https://www.ufn.edu.br/site/">UFN</a>.
         </p>
     </div>
